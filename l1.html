@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 1</title>
+    </head>
+    <script language="Javascript">
+        var tl=new Array(
+        "\nHackers solve problems and build things, and they believe in freedom and voluntary mutual help.",
+        "\nTo be accepted as a hacker, you have to behave as though you have this kind of attitude yourself.", 
+        "\nAnd to behave as though you have the attitude, you have to really believe the attitude." 
+        );
+        var speed=1;
+        var index=0; text_pos=0;
+        var str_length=tl[0].length;
+        var contents, row;
+        function password()
+        {
+          contents='';
+          row=Math.max(0,index-9);
+          while(row<index)
+            contents += tl[row++] + '\r\n';
+          document.forms[0].elements[0].value = contents + tl[index].substring(0,text_pos) + "_";
+          if(text_pos++==str_length)
+          {
+            text_pos=0;
+            index++;
+            if(index!=tl.length)
+            {
+              str_length=tl[index].length;
+              setTimeout("password()",2000);
+            }
+          } else
+            setTimeout("password()",speed);
+        }
+        </script>
+    <style>
+    .l1h {
+        color: white;
+        font-family: fixedsys, LucidaTerminal, monospace;
+    }
+    body {
+        background-color: #000;
+    }
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid red;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    .button2:hover {background-color: red;}
+    </style>
+    <body onload="password()">
+        <script language=JavaScript>
+        {
+        var a="l2";
+        function check()
+        {
+            if(document.a.c.value == a)
+            {
+                document.location.href=document.a.c.value+".html";
+            }
+            else
+            {
+                alert("Try harder :3");
+            }
+        }
+        }
+        </script>
+    <h1 align="center">Will you be able to crack this test?</h1>
+    <br><br>
+    <br><br>
+    <h1 class="l1h">Level 1</h1>
+    <br><br>
+    <center>
+    <form style="margin-top:-10px;"><textarea rows=15 cols=155 STYLE="width: 600px;height:300px;background: #000;padding:30px;font-size: 9pt;font-family: fixedsys, LucidaTerminal, monospace;color: #909090;text-align: left;overflow:auto;border: 1px"></textarea></form>
+    </center>
+    <br>
+    <br>
+    <div align="center">
+        <center>
+                <table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="15%" id="AutoNumber4"></table>
+                <tr>
+                    <td width="100%">
+                        <p align="center">
+                            <font size="4" face="Tahoma" color=white>Password:</font>
+                            <form name="a" action="javascript:check()">
+                                <p align="center">
+                                    <input type="login" name="c" maxlength="25" size="16"><br>
+                                    <br>
+                                    <input type="submit" value="Log In" class="button2">
+                                </p>
+                            </form>
+                        </p>
+                    </td>
+                </tr>
+        </center>
+    </div>
+    </body>
+</html>

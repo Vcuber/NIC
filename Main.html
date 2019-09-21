@@ -5,22 +5,55 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <style>
-    h1 {
-        display:block;
-        font-weight: bold;
-        color: azure;
+    
+    .start {
+        background-color: #4CAF50;
+        border: none;
+        color: black;
+        padding: 20px;
+        display: inline-block;
+        text-align: center;
+        font-size: 15px;
+        width: 200px;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: all 0.5s;
+        margin: auto;
     }
-        /*basic reset*/
+    .start span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .start span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    .start:hover span {
+        padding-right: 25px; 
+    }
+    .start:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    footer {
+        color: aliceblue;
+    }
 * {margin: 0; padding: 0;}
 /*adding a black bg to the body to make things clearer*/
 body {background: black;}
 canvas {display: block;}
-     </style>
-    <body onload="key()">
-            <canvas id="c"></canvas>
-        <script language=JavaScript>
-        {
-            var c = document.getElementById("c");
+</style>
+<body onload="key()">
+<canvas id="c"></canvas>
+<script language=JavaScript>
+{
+var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 
 //making the canvas full screen
@@ -67,25 +100,20 @@ function draw()
 		//incrementing Y coordinate
         drops[i]++;
     }
-    ctx.fillText('Hello World!', 250, 150);
+    ctx.fillText("Congrats on qualifying for the NIC event. Let's get started with the webhacking competition! GOOD LUCK :)", 500,500);
 }
 
 setInterval(draw, 175);
 
-            var a="null";
-            function check()
-            {
-                if(document.a.c.value == a)
-                {
-                    document.location.href="level2.html";
-                }
-                else
-                {
-                    alert("Try harder :3");
-                }
-            }
-        }
-        </script>
-        <h1> Congratulations on qualifying for the NIC event! </h1>
-    </body>
+}
+</script>
+<p align="center">
+<button type="button" style="vertical-align: middle" class="start" onclick="window.location.href='l1.html'"><span>Start</span></button>
+</p>
+<center>   
+    <footer>
+        &copy; Created by Varun Menon, 5th Sem CSE
+    </footer>
+</center>
+</body>
 </html>
