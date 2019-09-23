@@ -1,28 +1,13 @@
-<script language="JavaScript"><!--
-var userid = 'fatboi';
-var password = '12345696987654321';
-var windowReference;
-
-function promptForTwo() {
-  var w = 480, h = 340;
-
-  if (window.screen) {
-    w = screen.availWidth;
-    h = screen.availHeight;
-  }
-
-  var popW = 300, popH = 150;
-  var leftPos = (w-popW)/2, topPos = (h-popH)/2;
-
-  window.open('popup.htm','windowName','width=' + popW + ',height=' + popH + ',top=' + topPos + ',left=' + leftPos);
-
-  if (!windowReference.opener)
-    windowReference.opener = self;
+function checkForm()
+{    
+    if(document.a.c.value == "Legion")
+    {
+     alert("Well Done! Now onto the final round.")
+     document.location.href="thefinale.html";   
+    }
+    else 
+    {
+        alert("Try again :P");
+        document.location.href="crack.html";
+    }
 }
-
-function done() {
-  alert('userid = ' + userid + '\npassword = ' + password);
-}
-
-promptForTwo();
-//--></script>

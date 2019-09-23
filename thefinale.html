@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>The Final Level</title>
+    <style>
+        .txt {
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        h1 {
+            color: white;
+        }
+    </style>
+  </head>
+  <script language="Javascript">
+      var tl=new Array(
+      "\n There's something fishy down here. Why don't you have a look?"
+      );
+      var speed=0.5;
+      var index=0; text_pos=0;
+      var str_length=tl[0].length;
+      var contents, row;
+      function password()
+      {
+        contents='';
+        row=Math.max(0,index-9);
+        while(row<index)
+          contents += tl[row++] + '\r\n';
+        document.forms[0].elements[0].value = contents + tl[index].substring(0,text_pos) + "_";
+        if(text_pos++==str_length)
+        {
+          text_pos=0;
+          index++;
+          if(index!=tl.length)
+          {
+            str_length=tl[index].length;
+            setTimeout("password()",2000);
+          }
+        } else
+          setTimeout("password()",speed);
+      }
+  </script>
+  <body onload="password()" bg="/images/pss.gif" bgcolor="black">
+  <h1>The Final Level</h1>
+  <SCRIPT SRC="tf.js" LANGUAGE="JavaScript" type="text/javascript"></script>
+    <br>
+    <br>
+    <br>
+    <p color="white">CONGRATS ON MAKING IT THIS FAR. SOLVE THIS TO FINISH THE COMPETITION.</p>
+    <center>
+            <form style="margin-top:-10px;"><textarea rows=15 cols=155 STYLE="width: 600px;height:300px;background: #000;padding:30px;font-size: 9pt;font-family: fixedsys, LucidaTerminal, monospace;color: #909090;text-align: left;overflow:auto;border: 1px"></textarea></form>
+    </center>
+    <div align="center">
+        <center>
+                <table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="15%" id="AutoNumber4"></table>
+                <tr>
+                    <td width="100%">
+                        <p align="center">
+                            <font size="4" face="Tahoma" color=white>LOGIN <br><br></font>
+                            <form name="a" action="javascript:checkForm()">
+                                <p align="center">
+                                    <font size="4" face="Tahoma" color=white>
+                                    <p>Username: <input type="login" name="username" id="username" maxlength="25" size="16"></p><br>
+                                    <p>Password: <input type="pasword" name="pass" id="password" maxlength="25" size="16"></p><br>
+                                    <input type="submit" name="submit" value="Submit" class="button">
+                                </font>
+                                </p>
+                            </form>
+                        </p>
+                    </td>
+                </tr>
+        </center>
+    </div>
+  </body>
+</html>
