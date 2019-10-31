@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 9</title>
+    </head>
+    <script language="Javascript">
+        var tl=new Array(
+        "\nMost hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker.",
+        "\nHackers are arrogant geek romantics. They lack the attentive spirit of inquiry. ", 
+        "\nIt is a fairly open secret that almost all systems can be hacked, somehow. It is a less spoken of secret that such hacking has actually gone quite mainstream.",
+		"\nYounger hackers are hard to classify. They're probably just as diverse as the old hackers are. We're all over the map. ",
+		"\nA hacker is someone who uses a combination of high-tech cybertools and social engineering to gain illicit access to someone else's data.      ",
+		"\nBehind every successful Coder there an even more successful De-coder to understand that code.",
+		"\n Varun plays like a potato!.",
+        "\n If this level doesn't work, blame Vignesh"
+        );
+        var speed=1;
+        var index=0; text_pos=0;
+        var str_length=tl[0].length;
+        var contents, row;
+		
+        function password()
+        {
+          contents='';
+          row=Math.max(0,index-9);
+          while(row<index)
+            contents += tl[row++] + '\r\n';
+          document.forms[0].elements[0].value = contents + tl[index].substring(0,text_pos) + "_";
+          if(text_pos++==str_length)
+          {
+            text_pos=0;
+            index++;
+            if(index!=tl.length)
+            {
+              str_length=tl[index].length;
+              setTimeout("password()",2000);
+            }
+          } else
+            setTimeout("password()",speed);
+        }
+		function abc()
+		{
+		var d=new Date();
+		var dd=d.getTime();
+		return dd;
+		}
+		
+        </script>
+    <style>
+    .lev {
+        color: White;
+        font-family: fixedsys, LucidaTerminal, monospace;
+    }
+    body {
+        background-color: black;
+    }
+    .button2 {
+        background-color: grey;
+        color: black;
+        border: 2px solid green;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    .button2:hover {background-color: white;}
+    </style>
+    <body onload="password(),generatePassword()">
+        <script language=JavaScript>
+        {
+
+		var d=new Date();
+		var dd=d.getTime();
+		var qwe=Math.random().toString(36);
+		
+        function GO()
+        {
+            if(document.a.c.value == qwe)
+            {
+                document.location.href="thefinale.html"; 
+            }
+            else
+            {
+                alert("Try Again!"+"");
+            }
+        }
+        }
+        </script>
+    <h1 align="center">Are you even trying?</h1>
+    <h1 class="lev">Level 9</h1>
+    <br><br>
+    <center>
+    <form style="margin-top:-10px;"><textarea rows=15 cols=155 STYLE="width: 600px;height:300px;background:black;padding:30px;font-size: 9pt;font-family: fixedsys, LucidaTerminal, monospace;color: green;text-align: left;overflow:auto;border: 1px"></textarea></form>
+    </center>
+    <br>
+    <br>
+    <div align="center">
+        <center>
+                <table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="15%" id="AutoNumber4"></table>
+                <tr>
+                    <td width="100%">
+                        <p align="center">
+                            <font size="3" face="Tahoma" color=white>Password:</font>
+                            <form name="a" action="javascript:GO()">
+                                <p align="center">
+                                    <input type="login" name="c" maxlength="25" size="14"><br>
+                                    <br>
+                                    <input type="submit" value="Log In" class="button2">
+                                </p>
+                            </form>
+                        </p>
+                    </td>
+                </tr>
+        </center>
+    </div>
+    </body>
+</html>
