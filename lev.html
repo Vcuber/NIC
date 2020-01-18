@@ -69,13 +69,13 @@
 
 		var d=new Date();
 		var dd=d.getTime();
-		var qwe=Math.random().toString(36);
+		var qwe=Math.random().toString(36).slice(2);
 		
         function GO()
         {
             if(document.a.c.value == qwe)
             {
-                document.location.href="thefinale.html"; 
+                document.location.href="thefinale.html"; //change the file name to whatever level you want to be next.
             }
             else
             {
